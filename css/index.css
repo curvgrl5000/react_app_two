@@ -1,0 +1,19 @@
+.cards {
+	border-bottom: 5px solid #27eef7;
+  background-color: yellow;
+  padding: 2rem;
+  display: block;
+  width: 162px;
+  height: auto;
+  text-align: center;
+  font-style: oblique;
+  font-size: 1.5rem;
+}
+
+.listed {
+	padding: 23px;
+}
+
+.column {
+ width: 17rem;
+}
