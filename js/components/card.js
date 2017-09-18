@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function Card() {
+export default function Card(props) {
 	return (
-		<div className="cards">This is a card</div>
+		<div className="cards">{props.text}</div>
 	); 
 }

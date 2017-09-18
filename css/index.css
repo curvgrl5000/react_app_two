@@ -16,4 +16,9 @@
 
 .column {
  width: 17rem;
+ display: inline-flex
+}
+
+h3 {
+  text-align: center;
 }
