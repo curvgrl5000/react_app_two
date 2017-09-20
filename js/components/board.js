@@ -6,24 +6,13 @@ import List from './list';
 
 export default class Board extends React.Component{
 	render(){
-        const lists = [];
-        // for (let i=0; i<2; i++) {
-        //    lists.push(<List title= "X" />);
-        // }
-
-        // const lists_2 = [];
-        // for (let i=0; i<2; i++) {
-        //     lists_2.push(<List title= "X" />);
-        //       lists_2.push(<List title= {t[i]} />);
-        // }
-
-         let titles = ["List A", "List B", "List C"];
-         let listed = titles.map( item => <List key={item} title={item} /> );
-
+        
+         let titles = ["Nice to Have", "Add to WishList", "Your Dreaming"];
+         let listed = titles.map( item => <List key={item} tinyTitle={item} /> );
 
         return (
             <div className="column">
-                <List title="One Title" />
+                <List tinyTitle="Required"/>
                 {listed}
             </div>
         );

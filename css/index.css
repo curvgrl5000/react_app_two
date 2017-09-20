@@ -19,6 +19,14 @@
  display: inline-flex
 }
 
-h3 {
-  text-align: center;
+h3.color {
+    font-family: sans-serif;
+    color: lightcoral;
+    -webkit-margin-after: 0rem;
+}
+
+h5.color {
+	  font-family: sans-serif;
+		color: grey;
+		margin-top: .5rem;
 }
