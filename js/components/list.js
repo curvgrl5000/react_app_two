@@ -9,24 +9,32 @@ export default class List extends React.Component{
     }
         
     render(){
-        // const bigList = [];
-        // for (let i=0; i<3; i++) {
-        //     bigList.push(<Card text= {i} />);
-        //     bigList.push(<Card text= "HEY" />);
-        //     bigList.push(<Card />);
+        const bigList = [];
+        //for (let i=0; i<3; i++) {
+            // bigList.push(<Card text= {i} />);
+            // bigList.push(<Card text= "HEY" />);
+            // bigList.push(<Card />);
 
-        // }
+       // }
 
-        // const bigLister = [];
+        // const bigLister_1 = [];
         // const tasks = ["Buy Milk", "Do Dishes", "Make it to Bank"];
         // for (let i=0; i < tasks.length; i++) {
-        //     bigLister[i] = tasks[i];
-        //     console.log(bigLister);
+        //     bigLister_1[i] = tasks[i];
+        //     console.log(bigLister_1);
         // }
-        // bigLister;
+        // bigLister_1;
 
-        let tasks = ["Buy MilkyWays", "Do Dishes", "Make it to Bank"];
-        let biggestLister = tasks.map( item => <Card key={item} text={item} /> )
+        // const bigLister_2 = [];
+        // const tasks = ["Buy Milk", "Do Dishes", "Make it to Bank", "Paint Barn"];
+        // for (let i=0; i < tasks.length; i++) {
+        //     bigLister_2.push(<Card text= {tasks[i]} />);
+        //     console.log(bigLister_2);
+        // }
+        
+
+         let tasks = ["Buy MilkyWays", "Do Dishes", "Make it to Bank", "Ask for Raise"];
+         let biggestLister = tasks.map( item => <Card key={item} text={item} /> )
 
 
         return (
