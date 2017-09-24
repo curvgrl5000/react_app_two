@@ -4,16 +4,14 @@ import React from 'react';
 import Card from './card';
 
 export default class List extends React.Component{
-	constructor(props) {
+	constructor(props) {      
     super(props)
 
-    this.state = { title: 'Placeholder' };
+        this.state = { title: 'Placeholder' };
     
-    List.defaultProps = {
-      tinyTitle: 'Title'
-    };
-
-
+        List.defaultProps = {
+            tinyTitle: 'Title'
+        };
     }
         
     render(){
@@ -31,7 +29,7 @@ export default class List extends React.Component{
                     <h3 className="color">{this.state.title}</h3>
                     <h5 className="color">{this.props.tinyTitle}</h5>
                     <Card text = "Task" />
-                    <Card text = "Happy" />
+                    <Card text = "Happier" />
                     <Card text = "Something" /> 
                     {biggestLister}
                 </div>
