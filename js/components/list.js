@@ -1,6 +1,5 @@
 // js/components/list.js
 import React from 'react';
-
 import Card from './card';
 
 export default class List extends React.Component{

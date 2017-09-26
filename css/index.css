@@ -1,3 +1,56 @@
+body{
+  margin: 0px;
+}
+
+.navbar_styling {
+    background-color: aqua;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    flex: 1;
+}
+
+h1 {
+    background-color: yellow;
+    padding: 10px;
+    text-align: center;
+    width: 250px;
+}
+
+nav.all_links {
+    display: inline-flex;
+}
+
+ul.right_side {
+    background-color: white;
+    padding: 5px;
+    -webkit-padding-start: 0px;
+}
+
+li {
+    margin-right: auto;
+    list-style-type: none;
+    display: inline;
+    -webkit-padding-start: 0px;
+}
+
+li.topNav a {
+    display: inline-block;
+    padding-left: 20px;
+    font-family: sans-serif;
+    color: burlywood;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+li.topNav a:hover {
+    color: deeppink;
+    transition: all 1.5s ease;
+}
+
 .cards {
 	border-bottom: 5px solid #27eef7;
   background-color: yellow;
@@ -30,3 +83,5 @@ h5.color {
 		color: grey;
 		margin-top: .5rem;
 }
+
+
