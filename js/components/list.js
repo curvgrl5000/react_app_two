@@ -28,7 +28,7 @@ export default class List extends React.Component{
                 <div className="listed">
                     <h3 className="color">{this.state.title}</h3>
                     <h5 className="color">{this.props.tinyTitle}</h5>
-                    <Card text = "Task" />
+                    <Card text = "Taskier" />
                     <Card text = "Happier" />
                     <Card text = "Something" /> 
                     {biggestLister}
