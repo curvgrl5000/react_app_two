@@ -1,16 +1,14 @@
 // js/components/list.js
 import React from 'react';
 import Card from './card';
+import AddForm from './add-form';
 
 export default class List extends React.Component{
 	constructor(props) {      
     super(props)
 
         this.state = { title: 'Placeholder' };
-    
-        List.defaultProps = {
-            tinyTitle: 'Title'
-        };
+        
     }
         
     render(){
