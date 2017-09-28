@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function NavigationBar(props) {
 	// the MAPPING METHOD APPROACH
+	
 	const all_links = props.links.map((link, index) => (
 		<li className="topNav" key={index}>
 			<a href={link.href} target="_blank">
@@ -12,7 +13,6 @@ export default function NavigationBar(props) {
 
 	// the FOR LOOP APPROACH
 	const footer_links = [];
-	const numbers = footer_links.index;
   for (let i=0; i < props.links.length; i++) {
   	footer_links.push(
   		<li className="topNav" key={i.toString()}>
@@ -21,17 +21,21 @@ export default function NavigationBar(props) {
   			</a>
   		</li>
   	)
+  	console.log(footer_links);
   };
 
 	return (
 		<div className="navbar_styling">
 			<div className="logo">
-				<h1>{props.title}</h1>
+				<h1 title="its just an html title attribute"> {props.title}</h1>
+				<h3 className="subtext" title="Old Way to include title attributes into elements">
+					<a href="https://facebook.github.io/react/docs/dom-elements.html">Discover the world of Elements</a></h3>
 			</div>
 	    <nav className="all_links">
 	    	<ul className="right_side">
-	    		{footer_links}
+	    		{all_links}
 	    	</ul>
+
 	    </nav>
 	  </div>
 	); 

@@ -11,8 +11,8 @@ export default class Board extends React.Component{
         let titles = ["Nice to Have!", "Add to WishList", "Your Dreaming"];
         let listed = titles.map( item => <List key={item} tinyTitle={item} /> );
 
-        const links = [{ 
-              text: 'Favorite Blog',
+        const linky = [{ 
+              text: 'Favorite Blogs',
               href: 'https://www.washingtonpost.com/?reload=true'
             }, {
               text: 'Great Songwriters',
@@ -24,7 +24,7 @@ export default class Board extends React.Component{
 
         return (
             <div>
-                <NavigationBar title="THINGS TO DO" links={links} />
+                <NavigationBar title="THINGS TO DO" links={linky} />
                 <div className="column">
                     <List tinyTitle="Required"/>
                     {listed}
