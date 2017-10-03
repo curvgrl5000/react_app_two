@@ -5,33 +5,45 @@ import AddForm from './add-form';
 
 export default class List extends React.Component{
 	constructor(props) {      
-    super(props)
-
-        this.state = { title: 'Placeholder' };
-        
+        super(props);
+        this.state = { 
+            // An array with three objects to be used to map over to the cardCollection
+            cards: [{
+                text: 'Example Card 1'
+            }, { 
+                text: 'Example Card 2' 
+            }, {
+                text: 'Example Card 3' 
+            }]
+        }
     }
         
-    render(){
-         let tasks = ["Buy MilkyWays", "Do Dishes", "Make it to Bank", "Ask for Raise!"];
-         let biggestLister = tasks.map( item => <Card key={item} text={item} /> )
-
+    render() {
+         // review spread operator on MDM
+         const cardCollection = this.state.cards.map((card, index) =>    
+            <Card key={index} {...card} />  // we're passing all the keys from the object
+         );
         return (
-            <div className="listed">
+            <div className="list">
                 <div>
                     <input
                     value={this.state.title} 
                     onChange={event => this.setState({ title: event.target.value })} /> 
                 </div>
-                <div className="listed">
-                    <h3 className="color">{this.state.title}</h3>
-                    <h5 className="color">{this.props.tinyTitle}</h5>
-                    <Card text = "Taskier" />
-                    <Card text = "Happier" />
-                    <Card text = "Something" /> 
-                    {biggestLister}
+                <div className="list">
+                    <h3 className="color">{this.state.title}</h3> 
+                    {cardCollection}
+                    // We need to know if the card type is card to tell AddForm how to render the card when editing or toggling
+                    <AddForm type="card" />
                 </div>
             </div>
         );
     }
 }
+
+// This list should start out as blank
+List.defaultProps = {
+    title: ''
+};
+
 

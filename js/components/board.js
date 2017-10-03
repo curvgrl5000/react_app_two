@@ -1,15 +1,27 @@
 // js/components/board.js
 import React from 'react';
-import Card from './card';
 import List from './list';
+import AddForm from './add-form';
 import NavigationBar from './navbar';
 
 
-export default class Board extends React.Component{
+export default class Board extends React.Component {
+  constructor(props) {
+      super(props);
+
+      this.state = {
+        lists: [{
+          title: 'Nice to Have!'
+        }, {
+          title: 'Add to WishList'
+        }]
+      };
+  }
+
 	render(){
-        
-        let titles = ["Nice to Have!", "Add to WishList", "Your Dreaming"];
-        let listed = titles.map( item => <List key={item} tinyTitle={item} /> );
+        const listed = this.state.lists.map((list, index)  => 
+          <List key={index}  {...list} />
+        );
 
         const linky = [{ 
               text: 'Favorite Blogs',
@@ -26,10 +38,20 @@ export default class Board extends React.Component{
             <div>
                 <NavigationBar title="THINGS TO DO" links={linky} />
                 <div className="column">
+                    <h2>{this.props.tiltle}</h2>
                     <List tinyTitle="Required"/>
-                    {listed}
+                    <div className="lists">
+                      {listed}
+                    </div>
                 </div>
             </div>
         );
     }
 }
+
+// This list should start out as blank
+Board.defaultProps = {
+    title: 'Board'
+};
+
+

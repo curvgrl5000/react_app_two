@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 export default class AddForm extends React.Component {
     constructor(props) {
         super(props);
@@ -29,8 +27,8 @@ export default class AddForm extends React.Component {
         if (!this.state.editing) {
             return (
                 <div className="add-button"
-                    onClick={() => this.setEditing(true)}>
-                    <a href="#">Add a {this.props.type}...</a>
+                    onClick={ () => this.setEditing(true) }>
+                    <a href="#">Add a {this.props.type}&hellip;</a>
                 </div>
             );
         }
