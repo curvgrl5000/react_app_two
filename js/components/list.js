@@ -30,12 +30,9 @@ export default class List extends React.Component{
                     value={this.state.title} 
                     onChange={event => this.setState({ title: event.target.value })} /> 
                 </div>
-                <div className="list">
-                    <h3 className="color">{this.state.title}</h3> 
-                    {cardCollection}
-                    // We need to know if the card type is card to tell AddForm how to render the card when editing or toggling
-                    <AddForm type="card" />
-                </div>
+                <h3 className="color">{this.state.title}</h3> 
+                {cardCollection}
+                <AddForm type="card" />
             </div>
         );
     }

@@ -36,14 +36,13 @@ export default class Board extends React.Component {
 
         return (
             <div>
-                <NavigationBar title="THINGS TO DO" links={linky} />
-                <div className="column">
-                    <h2>{this.props.tiltle}</h2>
-                    <List tinyTitle="Required"/>
-                    <div className="lists">
-                      {listed}
-                    </div>
+              <NavigationBar title="THINGS TO DO" links={linky} />
+              <div className="column">
+                <div className="lists">
+                  <List tinyTitle="Required"/>
+                  {listed}
                 </div>
+              </div>
             </div>
         );
     }
