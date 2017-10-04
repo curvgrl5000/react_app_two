@@ -17,18 +17,23 @@ export default class List extends React.Component{
             }]
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        //alert('The new name of this List: ' + this.input.value);
-        const currentValue = this.input.value;
-        console.log(currentValue);
-        this.input.value = '';
+         alert('The new name of this List: ' + this.inputText.value);
+         const currentValue = this.inputText.value.trim() || "test";
+         console.log(currentValue);
+        this.inputText.value = '';
     }
 
+    update(){
+        this.setState({
+            foo: this.inputText.value
+        });
+    }
 
-        
     render() {
          // review spread operator on MDM
          const cardCollection = this.state.cards.map((card, index) =>    
@@ -39,12 +44,15 @@ export default class List extends React.Component{
                 <div>
                     <form onSubmit={this.handleSubmit}>
                         <label>
-                            <input placeholder="Name of List" type="text" ref={(input) => this.input = input} />
+                            <input placeholder="Name of List" type="text" 
+                            ref={ (input) => this.inputText = input }
+                             onChange={this.update.bind(this)}
+                            />
                         </label>
                         <input type="submit" value="Add" />
                     </form> 
                 </div>
-                <h3 className="color">{this.currentValue}</h3> 
+                <h3 className="color">{this.state.foo}</h3> 
                 {cardCollection}
                 <AddForm type="card" />
             </div>
