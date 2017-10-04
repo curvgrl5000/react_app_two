@@ -16,7 +16,18 @@ export default class List extends React.Component{
                 text: 'Example Card 3' 
             }]
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        //alert('The new name of this List: ' + this.input.value);
+        const currentValue = this.input.value;
+        console.log(currentValue);
+        this.input.value = '';
+    }
+
+
         
     render() {
          // review spread operator on MDM
@@ -26,13 +37,14 @@ export default class List extends React.Component{
         return (
             <div className="list">
                 <div>
-                    <input 
-                    type="text"
-                    value={this.state.title}
-                    placeholder="Name Your List"
-                    onChange={event => this.setState({ title: event.target.value })} /> 
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            <input placeholder="Name of List" type="text" ref={(input) => this.input = input} />
+                        </label>
+                        <input type="submit" value="Add" />
+                    </form> 
                 </div>
-                <h3 className="color" defaultValue="Placeholder">{this.state.title}</h3> 
+                <h3 className="color">{this.currentValue}</h3> 
                 {cardCollection}
                 <AddForm type="card" />
             </div>
