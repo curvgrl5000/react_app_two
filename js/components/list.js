@@ -49,7 +49,9 @@ export default class List extends React.Component{
                              onChange={this.update.bind(this)}
                             />
                         </label>
-                        <input type="submit" value="Add" />
+                        <button
+                          onClick={this.update.bind(this)}
+                        >Add</button>
                     </form> 
                 </div>
                 <h3 className="color">{this.state.foo}</h3> 
