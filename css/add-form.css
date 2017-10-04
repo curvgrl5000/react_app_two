@@ -31,3 +31,7 @@
 .board .add-form {
     align-self: flex-start;
 }
+
+form.card.add-form {
+    padding: .5em 0rem;
+}

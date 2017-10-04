@@ -26,11 +26,13 @@ export default class List extends React.Component{
         return (
             <div className="list">
                 <div>
-                    <input
-                    value={this.state.title} 
+                    <input 
+                    type="text"
+                    value={this.state.title}
+                    placeholder="Name Your List"
                     onChange={event => this.setState({ title: event.target.value })} /> 
                 </div>
-                <h3 className="color">{this.state.title}</h3> 
+                <h3 className="color" defaultValue="Placeholder">{this.state.title}</h3> 
                 {cardCollection}
                 <AddForm type="card" />
             </div>
