@@ -4,21 +4,24 @@ import Card from './card';
 import AddForm from './add-form';
 
 export default class List extends React.Component{
-	constructor(props) {      
+    constructor(props) {      
         super(props);
         this.state = { 
             // An array with three objects to be used to map over to the cardCollection
-            cards: [{
-                text: 'Example Card 1'
-            }, { 
-                text: 'Example Card 2' 
-            }, {
-                text: 'Example Card 3' 
-            }]
+            cards: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
+
+    addCard(text) {
+        this.setState({
+            cards: [
+            ...this.state.cards, 
+                { 
+                text: text 
+            }]
+        });
+    }     
 
     handleSubmit(event) {
         event.preventDefault();
@@ -56,7 +59,7 @@ export default class List extends React.Component{
                 </div>
                 <h3 className="color">{this.state.foo}</h3>
                 {cardCollection}
-                <AddForm type="card" />
+                <AddForm type="card" onAdd={text => this.addCard(text)} />
             </div>
         );
     }
