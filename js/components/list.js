@@ -4,33 +4,36 @@ import Card from './card';
 import AddForm from './add-form';
 
 export default class List extends React.Component{
-	constructor(props) {      
+    constructor(props) {      
         super(props);
         this.state = { 
             // An array with three objects to be used to map over to the cardCollection
-            cards: [{
-                text: 'Example Card 1'
-            }, { 
-                text: 'Example Card 2' 
-            }, {
-                text: 'Example Card 3' 
-            }]
+            cards: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
+
+    addCard(text) {
+        this.setState({
+            cards: [
+            ...this.state.cards, 
+                { 
+                text: text 
+            }]
+        });
+    }     
 
     handleSubmit(event) {
         event.preventDefault();
-         alert('The new name of this List: ' + this.inputText.value);
-         const currentValue = this.inputText.value.trim() || "test";
-         console.log(currentValue);
+        const currentValue = this.inputText.value.trim() || "Please Add Something!";
+        alert('The new name of this List: ' + currentValue);
+        console.log(currentValue);
         this.inputText.value = '';
     }
 
     update(){
         this.setState({
-            foo: this.inputText.value
+            foo: this.inputText.value,
         });
     }
 
@@ -46,17 +49,17 @@ export default class List extends React.Component{
                         <label>
                             <input placeholder="Name of List" type="text" 
                             ref={ (input) => this.inputText = input }
-                             onChange={this.update.bind(this)}
+                             onChange={this.update.bind(this)} 
                             />
                         </label>
                         <button
-                          onClick={this.update.bind(this)}
+                          onClick={this.handleSubmit.bind(this)}
                         >Add</button>
                     </form> 
                 </div>
-                <h3 className="color">{this.state.foo}</h3> 
+                <h3 className="color">{this.state.foo}</h3>
                 {cardCollection}
-                <AddForm type="card" />
+                <AddForm type="card" onAdd={text => this.addCard(text)} />
             </div>
         );
     }
