@@ -11,6 +11,7 @@ export default class List extends React.Component{
             cards: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        // console.log(this);
     }
 
     addCard(text) {
@@ -45,7 +46,7 @@ export default class List extends React.Component{
         return (
             <div className="list">
                 <div>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={event.currentTarget.handleSubmit}>
                         <label>
                             <input placeholder="Name of List" type="text" 
                             ref={ (input) => this.inputText = input }
@@ -53,7 +54,7 @@ export default class List extends React.Component{
                             />
                         </label>
                         <button
-                          onClick={this.handleSubmit.bind(this)}
+                          onClick={this.handleSubmit.bind(event)}
                         >Add</button>
                     </form> 
                 </div>
